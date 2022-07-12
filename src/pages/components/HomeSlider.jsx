@@ -10,6 +10,6 @@ export default function HomeSlider() {
 
     
     return (
-        <Image></Image>
+        <Image>Hello world</Image>
     )
 }
