@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/server/node_modules
 
 
 # testing
@@ -25,4 +26,4 @@ yarn-error.log*
 
 #SECRETSTUFF
 mcgippy.pem
-.env
+/server/.env

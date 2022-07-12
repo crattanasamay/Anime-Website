@@ -9,6 +9,7 @@ const Home = () =>{
     return(
         <div>
             <Navbar/>
+            <HomeSlider></HomeSlider>
         </div>
     
     
