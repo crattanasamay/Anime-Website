@@ -25,4 +25,4 @@ yarn-error.log*
 
 #SECRETSTUFF
 mcgippy.pem
-
+.env
