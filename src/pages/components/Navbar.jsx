@@ -43,7 +43,7 @@ export default function Navbar() {
         <Wrapper>
             <Left>
                 <LogoName>
-                   Anime Club
+                   Anime Club NTW Style
                 </LogoName>
                
             </Left>
