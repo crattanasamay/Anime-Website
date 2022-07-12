@@ -8,12 +8,7 @@ const Image = styled.img`
 
 export default function HomeSlider() {
 
-    useEffect(async() => {
-
-            const response = await fetch('https://api.myanimelist.net/v2/anime/1');
-            const data = response.json();
-        }, []
-    )
+    
     return (
         <Image></Image>
     )
