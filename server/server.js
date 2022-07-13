@@ -3,9 +3,10 @@ const bodyParser = require('body-parser');
 const routeHandler = require('./routes/handler.js')
 
 const app = express();
+app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use('/',routeHandler)
+app.use('/api',routeHandler)
 
 const PORT = 5000;
 

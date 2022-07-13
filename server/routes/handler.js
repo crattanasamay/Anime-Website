@@ -1,14 +1,27 @@
+const axios = require('axios')
 const express = require('express');
 const router = express.Router();
+require('dotenv').config()
 
 
-router.get('/api',(req,res) => {
-    const str = [{
-        "message" : "Hello",
-        "message2": "Hello World",
-    }];
+router.get('/',async (req,res) => {
+    
+   
+    const result = await axios.get('https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=4',{
+        headers: {
+            'Authorization': `Bearer ${process.env.API_CLIENTID}`,
+        }
+    })
 
-    res.end(JSON.stringify(str));
+    console.log(result.data)
+
+    
+    let str = [{
+        "hello" : "hello"
+    }]
+
+    res.end(JSON.stringify(str))
+    
 
 });
 
