@@ -1,4 +1,4 @@
-const axios = require('axios')
+const axios = require('axios');
 const express = require('express');
 const router = express.Router();
 require('dotenv').config()
@@ -6,21 +6,25 @@ require('dotenv').config()
 
 router.get('/',async (req,res) => {
     
+
+
    
-    const result = await axios.get('https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=4',{
+
+    await axios.get('https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=9',{
         headers: {
-            'Authorization': `Bearer ${process.env.API_CLIENTID}`,
-        }
+            'X-MAL-CLIENT-ID' : `${process.env.accessToken}`,
+        },
+    }).then((response) => {
+        console.log("Data Recieved")
+        res.end(JSON.stringify(response.data))
+    }).catch((error) =>{
+        console.log(error)
     })
 
-    console.log(result.data)
-
     
-    let str = [{
-        "hello" : "hello"
-    }]
+    
 
-    res.end(JSON.stringify(str))
+
     
 
 });
