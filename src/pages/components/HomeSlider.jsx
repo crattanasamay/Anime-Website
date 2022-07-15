@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 const Slider = styled.div`
   display:grid;
+  gap: 1.5rem;
   grid-template-columns: repeat(3,1fr);
+  padding: 3rem;
 
 `
 
@@ -16,6 +18,7 @@ const SliderImage = styled.img`
 `
 const SliderCard = styled.div`
   text-align: center;
+  vertical-align: top;
 
 `
 
@@ -29,6 +32,7 @@ const Wrapper = styled.div`
   display: block;
   width:100%;
   position: relative;
+  top: -1.rem;
 `
 
 
