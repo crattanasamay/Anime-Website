@@ -2,9 +2,36 @@ import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
 
 
-const sliderTitle = styled.p`
-  font-size:1.6rem ;
+const Slider = styled.div`
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+
 `
+
+const SliderImage = styled.img`
+
+  max-height: 318px;
+
+
+`
+const SliderCard = styled.div`
+  text-align: center;
+
+`
+
+const SliderHeader = styled.h1`
+  text-align: center;
+`
+
+const Wrapper = styled.div`
+  background-color: #a9b7e0;
+  margin: 0px;
+  display: block;
+  width:100%;
+  position: relative;
+`
+
+
 
 export default function HomeSlider() {
 
@@ -12,29 +39,40 @@ export default function HomeSlider() {
       async function fetchData() {
       const data = await fetch('/api');
       const items = await data.json();
-      setItems(items.data)
       //console.log(items.data)
+      console.log(items.data)
       //console.log(items.data[0].node.title)
+      setItems(items.data)
     }
     fetchData();
   }, []);
 
   const [items,setItems] = useState([]);
 
-  
+  function createCard(props){
+    return(
+      <SliderCard key = {props.id}>
+        <SliderImage src={props.main_picture.medium} />
+        <h3 className = "card_title">{props.title}</h3>
+      </SliderCard>
+
+    )
+  }
  
     return (
+      <Wrapper>
+      <SliderHeader>Anime Of The Season</SliderHeader>
 
-      <div>
+      <Slider>
         {
-          items.map((item) =>{
-            <sliderTitle>
-              {console.log(item.node.title)}
-              {item.node.title}
-            </sliderTitle>
+          items.map(item =>{
+            return (
+              createCard(item.node)
+            )
           })
         }
         
-      </div>
+      </Slider>
+      </Wrapper>
     )
 }

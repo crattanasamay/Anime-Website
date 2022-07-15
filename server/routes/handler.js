@@ -10,7 +10,7 @@ router.get('/',async (req,res) => {
 
    
 
-    await axios.get('https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=9',{
+    await axios.get('https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=3',{
         headers: {
             'X-MAL-CLIENT-ID' : `${process.env.accessToken}`,
         },

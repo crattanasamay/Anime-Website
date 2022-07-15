@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 
 const Container = styled.div`
+    margin:0px;
     height: 7rem;
     background-color: #5360ff;
 `
@@ -17,15 +18,13 @@ const Left = styled.div`
     flex: 1;
     text-align: left;
 `
-const Center = styled.div`
-    flex: 1;    
-    text-align: center;
-`
+
 const Right = styled.div`
     text-align: right;
     display: flex;
     flex: 1;
-    justify-content: flex-end; // Items Float To The End
+    justify-content: flex-end; // Items Float To The Right
+    overflow: hidden;
 `
 const NavItem = styled.div`
     font-size: 1.6rem;
@@ -43,15 +42,11 @@ export default function Navbar() {
         <Wrapper>
             <Left>
                 <LogoName>
-                   Anime Club NTW Style
+                   Anime Stuff
                 </LogoName>
                
             </Left>
-            <Center>
-                <LogoName>
-                    No Talent Whatsoever
-                </LogoName>
-            </Center>
+           
             <Right>
                 <NavItem>Home</NavItem>
                 <NavItem>Login</NavItem>
