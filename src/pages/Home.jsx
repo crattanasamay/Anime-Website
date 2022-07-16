@@ -1,7 +1,12 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import HomeSlider from "./components/HomeSlider";
+import Features from "./components/Features";
+
+
+
 import styled from "styled-components";
+
 
 
 const HomePage = styled.div`
@@ -15,6 +20,7 @@ const Home = () =>{
         <HomePage>
             <Navbar/>
             <HomeSlider/>
+            <Features/>
         </HomePage>
     
     

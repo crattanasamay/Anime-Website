@@ -62,7 +62,6 @@ export default function HomeSlider() {
       <SliderCard key = {props.node.id}>
         <SliderImage src={props.node.main_picture.medium} />
         <h3 className = "card_title">Anime: {props.node.title}</h3>
-        <p>Rank: {props.ranking.rank}</p>
       </SliderCard>
 
     )
