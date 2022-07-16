@@ -3,36 +3,40 @@ import styled from 'styled-components';
 
 
 const Slider = styled.div`
-  display:grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3,1fr);
-  padding: 3rem;
+  display:flex;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @media (max-width: 823px){
+    flex-direction: column;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
 
 `
 
 const SliderImage = styled.img`
-
   max-height: 318px;
 
-
+  @media (max-width: 850px){
+  }
 `
 const SliderCard = styled.div`
-  text-align: center;
-  vertical-align: top;
 
+  flex: 1;
 `
 
 const SliderHeader = styled.h1`
   text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 `
 
 const Wrapper = styled.div`
-  background-color: #a9b7e0;
-  margin: 0px;
-  display: block;
-  width:100%;
-  position: relative;
-  top: -1.rem;
+ 
+
 `
 
 
@@ -55,9 +59,10 @@ export default function HomeSlider() {
 
   function createCard(props){
     return(
-      <SliderCard key = {props.id}>
-        <SliderImage src={props.main_picture.medium} />
-        <h3 className = "card_title">{props.title}</h3>
+      <SliderCard key = {props.node.id}>
+        <SliderImage src={props.node.main_picture.medium} />
+        <h3 className = "card_title">Anime: {props.node.title}</h3>
+        <p>Rank: {props.ranking.rank}</p>
       </SliderCard>
 
     )
@@ -65,18 +70,29 @@ export default function HomeSlider() {
  
     return (
       <Wrapper>
-      <SliderHeader>Anime Of The Season</SliderHeader>
+        <SliderHeader>Anime Of The Season</SliderHeader>
+        <Slider>
+          {
+              items.map(item =>{
+              return (
+                createCard(item)
+              )
+            })
+          }
 
-      <Slider>
-        {
+
+        </Slider>
+
+     
+      </Wrapper>
+    )
+}
+
+
+ /* {
           items.map(item =>{
             return (
               createCard(item.node)
             )
           })
-        }
-        
-      </Slider>
-      </Wrapper>
-    )
-}
+        } */

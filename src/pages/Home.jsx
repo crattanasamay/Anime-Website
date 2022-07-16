@@ -8,12 +8,13 @@ const HomePage = styled.div`
     margin: 0px;
     padding: 0px;
 `
+
 const Home = () =>{
 
     return(
         <HomePage>
             <Navbar/>
-            <HomeSlider></HomeSlider>
+            <HomeSlider/>
         </HomePage>
     
     
