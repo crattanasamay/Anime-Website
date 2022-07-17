@@ -2,11 +2,10 @@ import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
 
 
-
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
-    background-color: #5360ff;
+    background-color: black;
     align-items: center;
     @media (max-width:450px){
         flex-direction: column;
@@ -30,13 +29,16 @@ const NavItem = styled.li`
     padding: .5rem;
     cursor: pointer;
     height:100%;
+    border-radius: 1rem;
+    color: white;
     &:hover{
-        background-color: #9fc5e8;
+        background-color: #2F5C8F;
     }
 
     @media (max-width:450px){
         text-align: center;
         padding: .2rem;
+        border-radius: 0rem;
         
     }
 
@@ -46,6 +48,7 @@ const NavItem = styled.li`
 const LogoName = styled.h1`
     font-weight: bold;
     margin: 1rem;
+    color:white;
 `
 
 const NavList = styled.ul`
@@ -85,6 +88,8 @@ const HamburgerBar = styled.span`
     background-color: white;
     border-radius: .7rem;
 `
+
+
 
 
 export default function Navbar() {
@@ -138,7 +143,7 @@ export default function Navbar() {
                 </HamburgerButton>
                 <NavContainer>
                     <NavList style={{display: isShown? 'flex':'none'}}>
-                        <NavItem>Home</NavItem>
+                        <NavItem href="/">Home</NavItem>
                         <NavItem>Login</NavItem>
                         <NavItem>Search</NavItem>
                     </NavList>
