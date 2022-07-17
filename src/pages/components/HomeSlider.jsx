@@ -8,6 +8,7 @@ const Slider = styled.div`
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: #12112a;
 
   @media (max-width: 823px){
     flex-direction: column;
@@ -32,10 +33,18 @@ const SliderHeader = styled.h1`
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: #12112a;
+  color:#d4dff1;
 `
 
 const Wrapper = styled.div`
  
+
+`
+
+const AnimeTitle = styled.h3`
+    color:#d4dff1;
+
 
 `
 
@@ -61,7 +70,7 @@ export default function HomeSlider() {
     return(
       <SliderCard key = {props.node.id}>
         <SliderImage src={props.node.main_picture.medium} />
-        <h3 className = "card_title">Anime: {props.node.title}</h3>
+        <AnimeTitle>Anime: {props.node.title}</AnimeTitle>
       </SliderCard>
 
     )
@@ -88,10 +97,3 @@ export default function HomeSlider() {
 }
 
 
- /* {
-          items.map(item =>{
-            return (
-              createCard(item.node)
-            )
-          })
-        } */
