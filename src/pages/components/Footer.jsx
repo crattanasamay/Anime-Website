@@ -75,10 +75,6 @@ export default function Footer() {
             <Items>Cookie Policy</Items>
         </ContentWrapper>
 
-        <ContentWrapper>
-        <div class="tenor-gif-embed" data-postid="26231799" data-share-method="host" data-aspect-ratio="1.81818" data-width="100%"><a href="https://tenor.com/view/kisara-yandere-engage-kiss-cute-gif-26231799">Kisara Yandere GIF</a>from <a href="https://tenor.com/search/kisara-gifs">Kisara GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        </ContentWrapper>
-
 
     </Wrapper>
   )
