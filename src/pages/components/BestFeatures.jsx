@@ -50,6 +50,8 @@ const AnimeImg = styled.img`
 export default function BestFeatures() {
 
     const [items,setItems] = useState([]);
+    const [animeData,setData] =useState([]);
+
 
     useEffect ( () => {
         async function fetchData(){
@@ -60,9 +62,17 @@ export default function BestFeatures() {
         fetchData();
     },[])
 
+    
     items.map(item =>{
-        console.log(item.season)
+        const key = (item.season.season + " " + item.season.year)
+        const animeImg = item.data[0].node.main_picture.medium;
+        const animeName = item.data[0].node.title;
+
+        //console.log( key + " " + animeImg + " " + animeName)
+    
     })
+
+    
     return (
 
     <Wrapper>

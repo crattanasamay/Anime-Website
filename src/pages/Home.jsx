@@ -16,7 +16,7 @@ const HomePage = styled.div`
     padding: 0px;
     height: auto;
     background-color: #12112a;
-    max-width:  1200px;
+   
 `
 
 const Wrapper = styled.div`
