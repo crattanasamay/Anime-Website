@@ -19,24 +19,22 @@ const animeList = [
 
 router.get('/',async (req,res) => {
 
-    const animeObject = [];
-    animeList.forEach(async link => {
-        try{
-           const data =  await axios.get(`${link}`,{
-                headers: {
-                    'X-MAL-CLIENT-ID' : `${process.env.accessToken}`,
-                },
-            })
+    const animeMap = animeList.map(async link =>{
+        const response = await axios.get(`${link}`,{
+            headers: {
+                'X-MAL-CLIENT-ID' : `${process.env.accessToken}`,
+            }
+        })
 
-            console.log(data.data)
-        }catch(e){
-            console.log(e)
-        }
-    
-    });
-    console.log("HELOL")
-    res.end(JSON.stringify(animeObject))
+         const data = response.data;
+         //console.log(data)
+         return data;
+    })
 
+    const helloWorld = await Promise.all(animeMap);
+
+   
+    res.end(JSON.stringify(helloWorld))
 
     
 

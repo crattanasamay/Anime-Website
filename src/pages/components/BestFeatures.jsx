@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
 
 
@@ -49,8 +49,20 @@ const AnimeImg = styled.img`
 `
 export default function BestFeatures() {
 
+    const [items,setItems] = useState([]);
 
+    useEffect ( () => {
+        async function fetchData(){
+            const data = await fetch('/api2');
+            const items = await data.json();
+            setItems(items)
+        }
+        fetchData();
+    },[])
 
+    items.map(item =>{
+        console.log(item.season)
+    })
     return (
 
     <Wrapper>
@@ -71,7 +83,7 @@ export default function BestFeatures() {
         </ButtonWrapper>
         <ImageWrapper>
             <AnimeHeader>Anime of Season</AnimeHeader>
-            <AnimeImg src="https://api-cdn.myanimelist.net/images/anime/1864/122519.jpg"/>
+            <AnimeImg src=""/>
         </ImageWrapper>
             
 

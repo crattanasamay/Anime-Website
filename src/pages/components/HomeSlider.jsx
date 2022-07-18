@@ -56,9 +56,6 @@ export default function HomeSlider() {
       async function fetchData() {
       const data = await fetch('/api');
       const items = await data.json();
-      //console.log(items.data)
-      console.log(items.data)
-      //console.log(items.data[0].node.title)
       setItems(items.data)
     }
     fetchData();
