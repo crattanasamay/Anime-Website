@@ -10,7 +10,10 @@ const Button = styled.button`
     height: 3rem;
     width: 6rem;
     border-radius: 1rem;
-
+    text-align: center;
+    background-color: #d4dff1;;
+    
+    
     &:hover{
         background-color: #2F5C8F;
         color:white;
@@ -20,15 +23,35 @@ const Button = styled.button`
 const ButtonWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    flex: 1;
-    
+    flex: 1;  
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+    grid-gap: 1.5rem;
+    grid-row-gap: 1rem;
+
+
 `
 const ImageWrapper = styled.div`
    flex: 1;
+
+   @media (max-width: 700px){
+        padding-top: 2rem;
+    }
+
 `
 const FlexWrapper =styled.div`
     display:flex;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 700px){
+        flex-direction: column;
+    }
 
 
 `
@@ -40,7 +63,8 @@ const FeatureHeader = styled.h1`
     color:#d4dff1;
 `
 const AnimeHeader = styled.h2`
-    color:white;
+    color:#d4dff1;
+    padding-bottom: 1rem;
 `
 
 const AnimeImg = styled.img`
@@ -50,8 +74,9 @@ const AnimeImg = styled.img`
 export default function BestFeatures() {
 
     const [items,setItems] = useState([]);
-    const [animeData,setData] =useState([]);
-
+    const [animeImage,setImage] = useState('https://api-cdn.myanimelist.net/images/anime/6/73245.jpg');
+    const [animeSeason,setSeason] = useState("SUMMER 2022");
+    const [animeTitle,setTitle] = useState('One Piece');
 
     useEffect ( () => {
         async function fetchData(){
@@ -63,15 +88,17 @@ export default function BestFeatures() {
     },[])
 
     
-    items.map(item =>{
-        const key = (item.season.season + " " + item.season.year)
-        const animeImg = item.data[0].node.main_picture.medium;
-        const animeName = item.data[0].node.title;
+  
+    console.log(items[0])
 
-        //console.log( key + " " + animeImg + " " + animeName)
-    
-    })
+    function changeProfile(index){ 
+        setImage(items[index].data[0].node.main_picture.medium)
+        setTitle(items[index].data[0].node.title)
+        const season = items[index].season.season + " " + items[index].season.year;
+        setSeason(season.toLocaleUpperCase())
+        
 
+    }
     
     return (
 
@@ -80,24 +107,24 @@ export default function BestFeatures() {
             Best Anime of Each Season
         </FeatureHeader>
         <FlexWrapper>
-        <ButtonWrapper>
-            <Button>Spring 2020</Button>
-            <Button>Summer 2020</Button>
-            <Button>Fall 2020</Button>
-            <Button>Winter 2020</Button>
-            <Button>Spring 2021</Button>
-            <Button>Summer 2021</Button>
-            <Button>Fall 2021</Button>
-            <Button>Winter 2021</Button>
-            <Button>Spring 2022</Button>
-        </ButtonWrapper>
-        <ImageWrapper>
-            <AnimeHeader>Anime of Season</AnimeHeader>
-            <AnimeImg src=""/>
-        </ImageWrapper>
+            <ButtonWrapper>
+                <Button onClick={() => changeProfile(8)}>Spring 2020</Button>
+                <Button onClick={() => changeProfile(7)}>Summer 2020</Button>
+                <Button onClick={() => changeProfile(6)}>Fall 2020</Button>
+                <Button onClick={() => changeProfile(5)}>Winter 2020</Button>
+                <Button onClick={() => changeProfile(4)}>Spring 2021</Button>
+                <Button onClick={() => changeProfile(3)}>Summer 2021</Button>
+                <Button onClick={() => changeProfile(2)}>Fall 2021</Button>
+                <Button onClick={() => changeProfile(1)}>Winter 2021</Button>
+                <Button onClick={() => changeProfile(0)}>Spring 2022</Button>
+            </ButtonWrapper>
+            <ImageWrapper>
+                <AnimeHeader>Anime of {animeSeason}</AnimeHeader>
+                <AnimeHeader>{animeTitle}</AnimeHeader>
+
+                <AnimeImg src={animeImage}/>
+            </ImageWrapper>
             
-
-
         </FlexWrapper>
         
 
