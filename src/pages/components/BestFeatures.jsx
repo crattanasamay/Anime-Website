@@ -11,6 +11,7 @@ const Button = styled.button`
     width: 6rem;
     border-radius: 1rem;
     text-align: center;
+    background-color: #d4dff1;;
     
     
     &:hover{
@@ -27,7 +28,8 @@ const ButtonWrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     justify-items: center;
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
+    grid-row-gap: 1rem;
 
 
 `
@@ -42,6 +44,10 @@ const ImageWrapper = styled.div`
 const FlexWrapper =styled.div`
     display:flex;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 700px){
         flex-direction: column;
@@ -57,7 +63,7 @@ const FeatureHeader = styled.h1`
     color:#d4dff1;
 `
 const AnimeHeader = styled.h2`
-    color:white;
+    color:#d4dff1;
     padding-bottom: 1rem;
 `
 
