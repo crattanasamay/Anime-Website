@@ -16,6 +16,7 @@ const HomePage = styled.div`
     padding: 0px;
     height: auto;
     background-color: #12112a;
+ 
    
 `
 
@@ -23,7 +24,6 @@ const Wrapper = styled.div`
     width:100%;
     text-align: center;
     background-color: #12112a;
-    height:100%auto;
 `
 
 const Home = () =>{

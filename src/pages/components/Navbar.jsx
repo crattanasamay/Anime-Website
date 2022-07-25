@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -135,7 +136,7 @@ export default function Navbar() {
     
     return (
         <Container>
-            <LogoName>Anime Club</LogoName>
+            <LogoName>Anime</LogoName>
                 <HamburgerButton onClick = {() => showNav() }>
                     <HamburgerBar/>
                     <HamburgerBar/>
@@ -144,7 +145,7 @@ export default function Navbar() {
                 <NavContainer>
                     <NavList style={{display: isShown? 'flex':'none'}}>
                         <NavItem href="/">Home</NavItem>
-                        <NavItem>Login</NavItem>
+                        <NavItem href="/Login">Login</NavItem>
                         <NavItem>Search</NavItem>
                     </NavList>
                     

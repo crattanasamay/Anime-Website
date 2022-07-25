@@ -53,9 +53,8 @@ const HeaderBar = styled.hr`
     border-color:#d4dff1;
     height: .1rem;
     width: 3rem;
-    @media (max-width: 500px){
-        margin:auto;
-    }
+    margin:auto;
+
 
 `
 export default function Footer() {
