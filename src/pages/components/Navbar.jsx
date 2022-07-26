@@ -158,7 +158,6 @@ export default function Navbar() {
                             
                             <NavItem><NavbarLink to="/">Home</NavbarLink></NavItem>
                             <NavItem><NavbarLink to="/Login">Login</NavbarLink></NavItem>
-                            <NavItem>Search</NavItem>
                        
                         </NavList>
                   
