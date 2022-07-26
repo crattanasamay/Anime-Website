@@ -1,12 +1,8 @@
 import React from "react";
-import Navbar from "./components/Navbar";
 import HomeSlider from "./components/HomeSlider";
 import Features from "./components/Features";
 import Footer from "./components/Footer"
 import BestFeatures from "./components/BestFeatures";
-
-
-
 import styled from "styled-components";
 
 
@@ -31,12 +27,12 @@ const Home = () =>{
     return(
     <Wrapper>
         <HomePage>
-            <Navbar/>
             <HomeSlider/>
             <BestFeatures/>
             <Features/>
             <Footer/>
         </HomePage>
+       
     </Wrapper>
     
     
