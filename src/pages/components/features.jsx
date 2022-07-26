@@ -11,8 +11,6 @@ const Wrapper = styled.div`
 const FeaturesCard = styled.div`
     flex: 1;
     text-align: center;
-  
-
     @media (max-width:700px){
         
 
@@ -32,9 +30,9 @@ const FeatureInfo = styled.h3`
 const FeatureInfoContainer = styled.div`
     margin: 0 auto;
     text-align: center;
-    height: 10rem;
-    width:30rem;
+    display:inline-block;
 
+  
 `
 export default function Features() {
   return (
