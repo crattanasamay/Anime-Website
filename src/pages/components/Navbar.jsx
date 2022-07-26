@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 
 
 const Container = styled.div`
@@ -45,6 +46,14 @@ const NavItem = styled.li`
 
 `
 
+const NavbarLink = styled(Link)`
+    color: white;
+    font-size: 1.6rem;
+    padding: .5rem;
+    text-decoration: none;
+`
+
+
 const LogoName = styled.h1`
     font-weight: bold;
     margin: 1rem;
@@ -55,6 +64,7 @@ const NavList = styled.ul`
     margin: 0;
     padding: 0;
     display: flex;
+    text-decoration: none;
 
     @media(max-width:450px){
         flex-direction: column;
@@ -88,6 +98,7 @@ const HamburgerBar = styled.span`
     background-color: white;
     border-radius: .7rem;
 `
+
 
 
 
@@ -135,18 +146,23 @@ export default function Navbar() {
     
     return (
         <Container>
-            <LogoName>Anime Club</LogoName>
+            <LogoName>Anime</LogoName>
                 <HamburgerButton onClick = {() => showNav() }>
                     <HamburgerBar/>
                     <HamburgerBar/>
                     <HamburgerBar/>
                 </HamburgerButton>
                 <NavContainer>
-                    <NavList style={{display: isShown? 'flex':'none'}}>
-                        <NavItem href="/">Home</NavItem>
-                        <NavItem>Login</NavItem>
-                        <NavItem>Search</NavItem>
-                    </NavList>
+                
+                        <NavList style={{display: isShown? 'flex':'none'}}>
+                            
+                            <NavItem><NavbarLink to="/">Home</NavbarLink></NavItem>
+                            <NavItem><NavbarLink to="/Login">Login</NavbarLink></NavItem>
+                            <NavItem>Search</NavItem>
+                       
+                        </NavList>
+                  
+                 
                     
             </NavContainer>
         </Container>
