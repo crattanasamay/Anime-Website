@@ -157,8 +157,7 @@ export default function Navbar() {
                         <NavList style={{display: isShown? 'flex':'none'}}>
                             
                             <NavItem><NavbarLink to="/">Home</NavbarLink></NavItem>
-                            <NavItem><NavbarLink to="/Login">Login</NavbarLink></NavItem>
-                            <NavItem>Search</NavItem>
+                            
                        
                         </NavList>
                   
