@@ -4,21 +4,24 @@ import {Link} from "react-router-dom";
 
 
 const Container = styled.div`
+    margin:0px auto;
+    padding: 0px auto;
     display: flex;
-    justify-content: space-between;
     background-color: black;
     align-items: center;
+    height: 3rem;
+    width:100%;
     @media (max-width:450px){
         flex-direction: column;
         align-items: flex-start;
+        height: 13rem;
     }
 
 `
 
 const NavContainer = styled.div`
 
-    height:100%;
-
+   
     @media (max-width:450px){
         width: 100%;
     }
@@ -27,9 +30,7 @@ const NavContainer = styled.div`
 const NavItem = styled.li`
     font-size: 1.6rem;
     list-style: none;
-    padding: .5rem;
     cursor: pointer;
-    height:100%;
     border-radius: 1rem;
     color: white;
     &:hover{
@@ -65,7 +66,8 @@ const NavList = styled.ul`
     padding: 0;
     display: flex;
     text-decoration: none;
-
+    text-align:center;
+    justify-content: center;
     @media(max-width:450px){
         flex-direction: column;
         width:100%;
